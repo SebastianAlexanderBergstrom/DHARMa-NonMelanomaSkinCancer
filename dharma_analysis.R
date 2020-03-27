@@ -4,8 +4,6 @@ library(MASS)
 library(glmmTMB)
 library(splines)
 source("https://raw.githubusercontent.com/SebastianAlexanderBergstrom/nonMelanomaSkinCancerSweden/master/dataFormating.R")
-#source("https://raw.githubusercontent.com/SebastianAlexanderBergstrom/nonMelanomaSkinCancerSweden/master/Modeling.R")
-
 
 # Read data ---------------------------------------------------------------
 
@@ -15,9 +13,9 @@ halland_population <- read.csv(curl("https://raw.githubusercontent.com/Sebastian
                                encoding="UTF-8")
 counts <- formatDF(read.csv(curl("https://raw.githubusercontent.com/SebastianAlexanderBergstrom/nonMelanomaSkinCancerSweden/master/counts.csv"),
                             header=F,sep=";",skip=2,encoding="UTF-8"))
+halland_data<-read.csv(curl("https://raw.githubusercontent.com/SebastianAlexanderBergstrom/DHARMa-NonMelanomaSkinCancer/master/Halland-alder.csv"),sep=";")
 
-halland_data<-read.csv("C:/Sebbe/Icke-datalogi/Skolarbete/Kandidatarbete/Data/Separat data/Tre regioner/Halland-alder.csv",sep=";")
-halland_pop <- read.csv("C:/Sebbe/Icke-datalogi/Skolarbete/Kandidatarbete/Data/Separat data/Tre regioner/Hallandfolk.csv",sep=";")
+halland_pop <- read.csv(curl("https://raw.githubusercontent.com/SebastianAlexanderBergstrom/DHARMa-NonMelanomaSkinCancer/master/Hallandfolk.csv"),sep=";")
 
 swedish_population <- read.csv(curl("https://raw.githubusercontent.com/SebastianAlexanderBergstrom/nonMelanomaSkinCancerSweden/master/swedishPopulation.csv"),
                             header=F,sep=";",skip=2,encoding="UTF-8")
